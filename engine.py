@@ -12,10 +12,11 @@ def main():
     player_y = int(screen_height/2)
 
 
-    #폰트 설정: 10x10파일, 이미지 파일은 그레이스케일, 배열 방식은 TCOD
+    #폰트 설정: 10x10파일, 이미지 파일은 그레이스케일, 배열 방식은 TCOD (가로로 길쭉함)
+    #원래 강좌에서는 10x10파일로 하는데 이걸로 하고 싶으면 # 지우고 밑에 폰트 설정을 주석처리(#)하면 됨. 파일은 이 브랜치 안에 있음.
     #libtcod.console_set_custom_font('arial10x10.png', libtcod.FONT_TYPE_GREYSCALE | libtcod.FONT_LAYOUT_TCOD)
 
-    #폰트 설정: 32x32파일, 이미지 파일은 그레이스케일, 배열 방식은 CP437
+    #폰트 설정: 32x32파일, 이미지 파일은 그레이스케일, 배열 방식은 CP437 (예전에 쓰던 문서 방식. 정사각형 모양으로 배열된 게 특징)
     libtcod.console_set_custom_font('terminal32x32.png', libtcod.FONT_TYPE_GREYSCALE | libtcod.FONT_LAYOUT_CP437)
 
     #스크린 생성: 스크린 가로/세로, 이름, 전체화면 여부
@@ -74,6 +75,10 @@ def main():
         if fullscreen:
             libtcod.console_set_fullscreen(not libtcod.console_is_fullscreen())
 
-
+"""
+만약에 engine.py를 다른 파일에서 import했다면 __name__ = 'engine'이 되지만 직접 이 파일을 실행했다면
+__name__ = '__main__'이 됨. 즉 이 파일을 직접 열었나 여부를 확인하는 것이라고 보면 됨.
+이 파일을 직접 열었다면 main()이 실행되는 방식.
+"""
 if __name__ == '__main__':
     main()
