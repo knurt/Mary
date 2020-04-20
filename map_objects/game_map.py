@@ -14,7 +14,7 @@ class GameMap:
         self.tiles = self.initialize_tiles()
 
     def initialize_tiles(self):
-        #타일 리스트를 채운다. 타일(시야막음)을 채우는데, y에 대해 높이수만큼 쌓고, 그걸 또 너비수만큼 쌓는다.
+        #타일 리스트를 채운다. 타일(비어있음)을 채우는데, y에 대해 높이수만큼 쌓고, 그걸 또 너비수만큼 쌓는다.
         tiles = [[Tile(False) for y in range(self.height)] for x in range(self.width)]
 
         #테스트용으로 일정 위치에 벽들을 설치함. 3강부터 지워질 것.
